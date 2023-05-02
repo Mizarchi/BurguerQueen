@@ -1,0 +1,53 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+}
+.esqueleto1{
+    background-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
+    padding: 50px;
+    width: 20%;
+    margin-top: 150px;
+}
+.Usuario{
+    display: flex;
+    justify-content: center;
+}
+.Correo{
+    height: 40px;
+    width: 80%;
+    font-size: 15px;
+    margin: 10px;
+}
+a{
+    color: black;
+}
+
+.Logo {
+    width: 100px;
+    margin-bottom: 20px;
+ 
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.Continuar{
+    height: 40px;
+    width: 70%;
+    font-size: 15px;
+}
+
+
+
