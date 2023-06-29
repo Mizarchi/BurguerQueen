@@ -1,22 +1,25 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './Login/Login.component';
-import { passwordComponent } from './New-password/password.component';
-import { RegisterComponent } from './Register/Register.component';
+import { LoginComponent } from './components/Login/Login.component';
+import { RegisterComponent } from './components/Register/Register.component'
+import { MenuPComponent} from './components/MenuP/MenuPcomponent';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
 
 const routes: Routes = [
-  {
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { 
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
   path: 'register',
   component: RegisterComponent
   },
   {
-  path: 'newpassword',
-  component: passwordComponent
+    path: 'menu',
+    component: MenuPComponent, ...canActivate(()=> redirectUnauthorizedTo(['/register']))
   },
+
 ];
 
 @NgModule({

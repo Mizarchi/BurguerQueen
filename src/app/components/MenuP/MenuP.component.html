@@ -1,0 +1,264 @@
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed&display=swap');
+
+</style>
+<div class="encabezado">
+   <div class="salida">
+    <div class="circulo">
+      <img class="Usuarioimg1"src="./assets/Asset2.png">
+    </div>
+    <button class="newboton"> </button>
+    <button class="newboton"> </button>
+    <button class="newboton">Pedido</button>
+    <button class="newboton" (click)="onClick()">Salir </button>
+  </div>
+</div>
+
+<div class="cubiculo1">
+  <div class="datos">
+    <div class="circulo2"></div>
+      <img class="Usuarioimg"src="./assets/usuario.png">
+
+    <div class="datos2">
+      <input class="datos3" type="text" placeholder=" Nombre">
+    </div>
+
+    <div class="datos2">
+      <input class="datos3" type="text" placeholder="Cédula">
+    </div>
+
+    <div class="datos2">
+      <input class="datos3" type="text"placeholder="Número">
+    </div>
+
+    <div class="datos2">
+      <input class="datos3" type="text" placeholder="Direccion">
+    </div>
+  </div>
+
+  <div class="comida1">
+    <div class="comida2">
+      <button class="comida3"(click)="mostrarDesayuno()">Desayuno</button>
+      <button class="comida3"(click)="mostrarAlmuerzo()">Almuerzo</button>
+    </div>
+    <div *ngIf="mostrarBotonesDesayuno" class="Desayuno">
+      <button class="Desayuno1" (click)="mostrarBotonesC()">Café</button>
+      <button class="Desayuno1" (click)="mostrarBotonesP()">Sandwich</button>
+      <button class="Desayuno1" (click)="mostrarBotonesB()">Bebidas</button>
+      <button class="Desayuno1" (click)="mostrarBotonesM()">Malteadas</button>
+    </div>
+    
+    <div *ngIf="mostrarBotonesAlmuerzo" class="Almuerzo">
+      <button class="Almuerzo1"(click)="mostrarBotonesH()">Hamburguesas</button>
+      <button class="Almuerzo1"(click)="mostrarBotonesA()">Acompañamientos</button>
+      <button class="Almuerzo1"(click)="mostrarBotonesCe()">Cervezas</button>
+      <button class="Desayuno1" (click)="mostrarBotonesB()">Bebidas</button>
+    </div>
+    
+  </div>
+</div>
+
+<div class="cubiculo2">
+
+  <div class="datos4">
+<div class="centrar">
+    <div class="encabezado2">
+      <div class="palabras">
+        <p> Producto</p>
+        <p class="unidad">Uds</p>
+        <p> Precio</p>
+      </div>
+  </div>
+</div>
+<div class="centrar">
+  <div class="lista">
+    <div *ngFor="let producto of listaProductos" class="producto-item">
+      <div class="palabras2">
+        <div class="objetosCafe">
+        <p class="cafe">{{ producto.nombre }}</p>
+        </div>
+        <div class="objetosUnidad">
+        <p class="unidad2">{{ producto.cantidad }}</p>
+        </div>
+        <div class="objetosCuatro">
+        <p class="cuatro">$ {{ producto.precio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="centrar">
+<div class="encabezado3">
+  <p> Total</p>
+  <button class="impresora"> 
+    <img class="impresora2" src="./assets/imprimir.png">
+  </button>
+  <button class="basura"> 
+    <img class="basura2" src="./assets/papelera.png">
+  </button>
+  <div class="total">
+    <p>$ {{ calcularTotal() }}</p>
+  </div>
+</div>
+</div>
+</div>
+
+ <div class="contenedorC">
+  <div class="linea">
+    <div class="centrar">
+      <div class="titulo">
+      <p class="titulo2"> Menú </p>
+      </div>
+    </div>
+    <div class="circuloA">
+      <img class="restaurante" src="./assets/restaurante.png">
+    </div>
+  </div>
+  <div class="blanco">
+    <div class="centrar">
+
+      <!--Menu desayuno -->
+    <div >
+      <div *ngIf="mostrarBotonessandwich" class="botonesP">
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Sandwich Croque-mosieur')" >Sandwich Croque-mosieur $7</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Sandwich Cheesesteak')" >Sandwich Cheesesteak $8</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Sandwich Club Sandwich')" >Sandwich Club Sandwich $6</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Sandwich Lobster')" >Sandwich Lobster $8</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Sandwich Mollete')" >Sandwich Mollete $6</button>
+        </div>
+      </div>
+
+      <div *ngIf="mostrarBotonesCafe" class="botonesP">
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Café con leche')" >Café con leche $3</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Café bombón')" >Café bombón $5</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Mocca')" >Mocca $3</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Capuchino')" >Capuchino $3</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Americano')" >Americano $3</button>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrarBotonesMalteada" class="botonesP">
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Malteada de cafe y oreo')" >Malteada de cafe y oreo $6</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Malteada de vainilla')" >Malteada de vainilla $4</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Malteada de chocolate')" >Malteada de chocolate $4</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Malteada de fresa')" >Malteada de fresa $4 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Malteada de fresa y chocolate')" >Malteada de fresa y chocolate $6</button>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrarBotonesBebida" class="botonesP">
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Nestea')" >Nestea $3 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Refresco')" >Refresco $2 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Jugo de naranja')" >Jugo de naranja $4 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Jugo de mora')" >Jugo de mora $4</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Limonada')" >Limonada $3</button>
+        </div>
+      </div>
+      <!-- menu desayuno-->
+
+      <!-- Menu almuerzo -->
+
+      <div *ngIf="mostrarBotonesHamburguesa" class="botonesP">
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Hamburguesa simple')" >Hamburguesa simple $10 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Hamburguesa doble')" >Hamburguesa doble $15</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Hamburguesa pollo crispy')" >Hamburguesa pollo crispy  $15</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Hamburguesa vegana')" >Hamburguesa vegana $12</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Hamburguesa BBQ')" >Hamburguesa BBQ $15</button>
+        </div>
+      </div>
+
+      <div *ngIf="mostrarBotonesAcompanante" class="botonesP">
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Papas fritas')" >Papas fritas $5 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Aro de cebolla')" >Aro de cebolla $5</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Tequeños de queso')" >Tequeños de queso $5</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Dedos de queso')" >Dedos de queso $5</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Palitos de mozzarela')" >Palitos de mozzarela $5 </button>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrarBotonesCerveza" class="botonesP">
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Cerveza pilsen')" >Cerveza pilsen $3 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Cerveza lager')" >Cerveza lager $3</button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Cerveza Zulia')" >Cerveza Zulia $4 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Tobo de Cerveza')" >Tobo de Cerveza $5 </button>
+        </div>
+        <div>
+          <button class="rojo" (click)="mostrarProducto('Cerveza alemana')" >Cerveza alemana $7</button>
+        </div>
+      </div>
+    </div>
+
+      <!--Menu almuerzo-->
+  </div>
+ </div>
+</div>
+
+
+
+
+
+
+
+

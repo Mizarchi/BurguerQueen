@@ -6,11 +6,10 @@ import {LoginComponent} from './components/Login/Login.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/Register/Register.component';
 import { environment } from 'src/environments/environment';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
-import { AngularFireModule } from 'angularfire2';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { MenuPComponent } from './components/MenuP/MenuPcomponent';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 
 
@@ -36,12 +35,13 @@ AppRoutingModule,
 ReactiveFormsModule,
 provideFirebaseApp(() => initializeApp(environment.firebase)),
 provideAuth(() => getAuth()),
-provideFirestore(() => getFirestore()),
+provideFirebaseApp(() => initializeApp(environment.firebase)),
+provideFirestore(() => getFirestore())
 
 
 ],
 
-providers: [AngularFireModule],
+providers: [],
 bootstrap: [AppComponent]
 })
 export class AppModule { }

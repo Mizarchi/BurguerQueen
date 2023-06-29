@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { ProductosService } from 'src/app/services/place.service';
 
 
 
@@ -30,47 +31,48 @@ export class MenuPComponent implements OnInit {
   listaProductos: any[] = [];
   
 
-  productos = [
-    {nombre: 'Seleccione su producto', cantidad: null, precio: null },
-    { nombre: 'Café americano', cantidad: 1, precio: 4 },
-    { nombre: 'Sandwich Croque-mosieur', cantidad: 1, precio: 7 },
-    { nombre: 'Sandwich Cheesesteak', cantidad: 1, precio: 8 },
-    { nombre: 'Sandwich Club Sandwich', cantidad: 1, precio: 6 },
-    { nombre: 'Sandwich Lobster', cantidad: 1, precio: 8 },
-    { nombre: 'Sandwich Mollete', cantidad: 1, precio: 6 },
-    { nombre: 'Café con leche', cantidad: 1, precio: 3 },
-    { nombre: 'Café bombón', cantidad: 1, precio: 5 },
-    { nombre: 'Mocca', cantidad: 1, precio: 3 },
-    { nombre: 'Capuchino', cantidad: 1, precio: 3 },
-    { nombre: 'Americano', cantidad: 1, precio: 3 },
-    { nombre: 'Malteada de cafe y oreo', cantidad: 1, precio: 6 },
-    { nombre: 'Malteada de vainilla', cantidad: 1, precio: 4 },
-    { nombre: 'Malteada de chocolate', cantidad: 1, precio: 4 },
-    { nombre: 'Malteada de fresa', cantidad: 1, precio: 4 },
-    { nombre: 'Malteada de fresa y chocolate', cantidad: 1, precio: 6 },
-    { nombre: 'Nestea', cantidad: 1, precio: 3 },
-    { nombre: 'Refresco', cantidad: 1, precio: 2 },
-    { nombre: 'Jugo de naranja', cantidad: 1, precio: 4 },
-    { nombre: 'Juge de mora', cantidad: 1, precio: 4 },
-    { nombre: 'Limonada', cantidad: 1, precio: 3 },
-    { nombre: 'Hamburguesa simple', cantidad: 1, precio: 10 },
-    { nombre: 'Hamburguesa doble', cantidad: 1, precio: 15},
-    { nombre: 'Hamburguesa pollo crispy', cantidad: 1, precio: 15},
-    { nombre: 'Hamburguesa vegana', cantidad: 1, precio: 12},
-    { nombre: 'Hamburguesa BBQ', cantidad: 1, precio: 15},
-    { nombre: 'Papas fritas', cantidad: 1, precio: 5},
-    { nombre: 'Aro de cebolla', cantidad: 1, precio: 5},
-    { nombre: 'Tequeños de queso', cantidad: 1, precio: 5},
-    { nombre: 'Dedos de queso', cantidad: 1, precio: 5},
-    { nombre: 'Palitos de mozzarela', cantidad: 1, precio: 5},
-    { nombre: 'Cerveza pilsen', cantidad: 1, precio: 3},
-    { nombre: 'Cerveza lager', cantidad: 1, precio: 3},
-    { nombre: 'Cerveza Zulia', cantidad: 1, precio: 4},
-    { nombre: 'Tobo de Cerveza', cantidad: 1, precio: 5},
-    { nombre: 'Cerveza alemana', cantidad: 1, precio: 7},
-  ];
+  // productos = [
+  //   {nombre: 'Seleccione su producto', cantidad: null, precio: null },
+  //   { nombre: 'Café americano', cantidad: 1, precio: 4 },
+  //   { nombre: 'Sandwich Croque-mosieur', cantidad: 1, precio: 7 },
+  //   { nombre: 'Sandwich Cheesesteak', cantidad: 1, precio: 8 },
+  //   { nombre: 'Sandwich Club Sandwich', cantidad: 1, precio: 6 },
+  //   { nombre: 'Sandwich Lobster', cantidad: 1, precio: 8 },
+  //   { nombre: 'Sandwich Mollete', cantidad: 1, precio: 6 },
+  //   { nombre: 'Café con leche', cantidad: 1, precio: 3 },
+  //   { nombre: 'Café bombón', cantidad: 1, precio: 5 },
+  //   { nombre: 'Mocca', cantidad: 1, precio: 3 },
+  //   { nombre: 'Capuchino', cantidad: 1, precio: 3 },
+  //   { nombre: 'Americano', cantidad: 1, precio: 3 },
+  //   { nombre: 'Malteada de cafe y oreo', cantidad: 1, precio: 6 },
+  //   { nombre: 'Malteada de vainilla', cantidad: 1, precio: 4 },
+  //   { nombre: 'Malteada de chocolate', cantidad: 1, precio: 4 },
+  //   { nombre: 'Malteada de fresa', cantidad: 1, precio: 4 },
+  //   { nombre: 'Malteada de fresa y chocolate', cantidad: 1, precio: 6 },
+  //   { nombre: 'Nestea', cantidad: 1, precio: 3 },
+  //   { nombre: 'Refresco', cantidad: 1, precio: 2 },
+  //   { nombre: 'Jugo de naranja', cantidad: 1, precio: 4 },
+  //   { nombre: 'Juge de mora', cantidad: 1, precio: 4 },
+  //   { nombre: 'Limonada', cantidad: 1, precio: 3 },
+  //   { nombre: 'Hamburguesa simple', cantidad: 1, precio: 10 },
+  //   { nombre: 'Hamburguesa doble', cantidad: 1, precio: 15},
+  //   { nombre: 'Hamburguesa pollo crispy', cantidad: 1, precio: 15},
+  //   { nombre: 'Hamburguesa vegana', cantidad: 1, precio: 12},
+  //   { nombre: 'Hamburguesa BBQ', cantidad: 1, precio: 15},
+  //   { nombre: 'Papas fritas', cantidad: 1, precio: 5},
+  //   { nombre: 'Aro de cebolla', cantidad: 1, precio: 5},
+  //   { nombre: 'Tequeños de queso', cantidad: 1, precio: 5},
+  //   { nombre: 'Dedos de queso', cantidad: 1, precio: 5},
+  //   { nombre: 'Palitos de mozzarela', cantidad: 1, precio: 5},
+  //   { nombre: 'Cerveza pilsen', cantidad: 1, precio: 3},
+  //   { nombre: 'Cerveza lager', cantidad: 1, precio: 3},
+  //   { nombre: 'Cerveza Zulia', cantidad: 1, precio: 4},
+  //   { nombre: 'Tobo de Cerveza', cantidad: 1, precio: 5},
+  //   { nombre: 'Cerveza alemana', cantidad: 1, precio: 7},
+  // ];
 
-  constructor( 
+  constructor(
+    private productosService: ProductosService,
     private userService: UserService,
     private router: Router
   ) { }
@@ -78,19 +80,12 @@ export class MenuPComponent implements OnInit {
 
   productoSeleccionado: any = null;
 
-  mostrarProducto(nombreProducto: string) {
-    const productoExistente = this.listaProductos.find(producto => producto.nombre === nombreProducto);
-    if (productoExistente) {
-      productoExistente.cantidad += 1;
-      const producto = this.productos.find(producto => producto.nombre === nombreProducto);
-      if (producto) {
-        productoExistente.precio += producto.precio;
-      }
+  async mostrarProducto(nombre: string,) {
+    const producto = await this.productosService.getProductobyId(nombre);
+    if (producto) {
+      console.log(producto);
     } else {
-      const producto = this.productos.find(producto => producto.nombre === nombreProducto);
-      if (producto) {
-        this.listaProductos.push({ ...producto });
-      }
+      console.log('Producto no encontrado');
     }
   }
   

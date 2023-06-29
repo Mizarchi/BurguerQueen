@@ -1,0 +1,34 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.email{
+    height: 40px;
+    width: 80%;
+    font-size: 15px;
+    margin: 10px;  
+}
+.siguiente{
+    height: 40px;
+    width: 70%;
+    font-size: 15px;
+}
+a{
+    color: black;
+    margin-top: 10px;
+}
+.contenedor2{
+    display: flex;
+    justify-content: center;
+}
+
+.esqueleto3{
+    background-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
+    padding: 50px;
+    width: 20%;
+    margin-top: 150px;
+}
+

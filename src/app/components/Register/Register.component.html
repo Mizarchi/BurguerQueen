@@ -1,0 +1,26 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed&display=swap');
+</style>
+<form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+  <div class="contenedor2">
+   <div class="esqueleto3">
+     <div class="persona">
+      <div class="contenedor2">
+      <h1> Nuevo usuario</h1>
+      </div>
+      <div class="contenedor2">
+      <input class ="email" type="text" placeholder="Correo electrónico" formControlName="email">
+      </div>
+      <div class="contenedor2">
+      <input class ="email" type="password" placeholder="Contraseña" maxlength="8" formControlName="password">
+      </div>
+      <div class="contenedor2">
+      <button class="siguiente"> Registrate </button>
+      </div>
+      <div class="contenedor2">
+        <a routerLink="/login"> atras</a>
+      </div>
+   </div>
+  </div>
+</div>
+</form>

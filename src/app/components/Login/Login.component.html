@@ -1,0 +1,31 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed&display=swap');
+  </style>
+<div class="contenedor">
+<div class="esqueleto1">
+    <div class="head">
+       <img class="Logo" src="/assets/Logo1.png">
+    </div>
+    
+    <div class="esqueleto2">
+   <form [formGroup]="formLogin">
+       <div class="Search">
+    <div class="Usuario">
+        <input name= "name" class ="Correo" type="text" placeholder="Usuario" formControlName="email">
+    </div>
+    
+    <div class="Usuario">
+    <input name=" password"class ="Correo" type="password" placeholder="Contraseña" maxlength="8" formControlName="password">
+    </div>
+    <div class="boton">
+    <button class="Continuar" (click)="onClick()"> Continuar </button>    
+    </div>
+    </div>
+    </form>
+     <div class="Usuario">
+         <a routerLink="/register"><u>¿Aún no tienes una cuenta?</u></a>
+     </div>
+    </div>
+  </div> 
+</div>
+    

@@ -1,0 +1,375 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.encabezado{
+    background-color: #06197C;
+    height: 90px;
+    width: 100%;
+}
+.salida{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.circulo{
+    background-color: white;
+    background:white ;
+    border-radius: 50%;
+    width: 89px;
+    height: 85px;
+    margin-top: 3px;
+}
+
+.newboton{
+    color: #fff;
+    font-size: 18px;
+    height: 68px;
+    width: 158px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #1022C2;
+    border: 0px;
+}
+
+.newboton:hover{
+    background-color:#002D7B;
+}
+
+.datos{
+    height:222px;
+    width:405px;
+    background-color: #CFDAFF;
+    border-radius: 20px;
+    border: 0px;
+    margin-top: 20px;
+
+}
+
+.datos2{
+    padding-right: 40px;
+    display: flex;
+    justify-content:end;
+}
+
+.circulo2{
+    display: flex;
+    position: absolute;
+    background-color: white;
+    background:white ;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: 60px;
+    margin-left: 30px;
+
+}
+
+.Usuarioimg{
+    display: flex;
+    position: absolute;
+    margin-top: 85px;
+    margin-left: 60px;
+    height: 50px;
+    width: 50px;
+}
+
+.datos3{
+    margin-top: 10px;
+    font-size: 18px;
+    background-color: #CFDAFF;
+    border: 0px;
+    border-bottom:1px solid #fff;
+    margin-top: 27px;
+}
+
+.productos{
+    display: flex;
+    justify-content: end;
+    height: 438px;
+    width: 467px;
+    background-color: #CFDAFF;
+}
+
+.comida1{
+    background-color: #CFDAFF;
+    height: 282px;
+    width: 721px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.comida2{
+    display: flex;
+    justify-content: center;
+}
+
+.cubiculo1{
+    display: flex;
+    justify-content: center;
+}
+
+.comida3{
+    font-size: 18px;
+    color: #fff;
+    background-color: #939DFF;
+    border-radius: 20px;
+    border:0px;
+    height: 45px;
+    width: 249px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.comida3:hover{
+    background-color:#002A73;
+}
+
+.Desayuno{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Desayuno1{
+    color: #fff;
+    background-color: #FFCE50;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left:15px;
+    margin-right:15px;
+    height: 39px;
+    width:140px;
+    border-radius:10px;
+    border: 0px;
+}
+.Desayuno1:hover{
+    background-color: #E4A400;
+}
+
+.Almuerzo{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Almuerzo1{
+    color: #fff;
+    background-color: #FFCE50;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left:15px;
+    margin-right:15px;
+    height: 39px;
+    width:140px;
+    border-radius:10px;
+    border: 0px;
+}
+.Almuerzo1:hover{
+    background-color: #E4A400;
+}
+
+
+.Usuarioimg1{
+    display: flex;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 3px;
+    height: 77px;
+    width: 77px;
+
+}
+
+.cubiculo2{
+    display: flex;
+    justify-content: center;
+
+}
+ 
+ .datos4{
+    margin-right: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    height: 469px;
+    width: 405px;
+    background-color:#CFDAFF;
+    border-radius: 20px;
+}
+
+.lista{
+    background-color: #fff;
+    height: 410px;
+    width: 363px;
+    overflow-y: auto;
+    
+}
+.encabezado3{
+    color: #fff;
+    display: flex;
+    justify-content:space-between;
+    height: 26px;
+    width: 344px;
+    background-color: #1022C2;
+    border-radius: 0px 0px 5px 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+}
+.encabezado2{
+    height: 26px;
+    width: 363px;
+    background-color: #1022C2;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.palabras{
+    display: flex;
+    justify-content:space-between;
+    color: #fff;
+    padding-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+.palabras2{
+    display: flex;
+    justify-content:space-between;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+    width: 340px;
+}
+
+
+.unidad{
+    margin-left: 110px;
+}
+.objetosCafe{
+    width: 160px;
+}
+.cuatro{
+    margin-right: 13px;
+}
+.total{
+ color: #fff;
+ display: flex;
+ justify-content: center;
+ height: 20px;
+ width: 78px;
+ background-color: #C21B10;
+ border-radius: 5px;
+}
+
+.impresora{
+    margin-left: 110px;
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 50px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    border: 0px;
+}
+.impresora2{
+    height: 20px;
+    width: 20px;   
+}
+
+.basura{
+   
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 50px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    border: 0px;
+}
+.basura2{
+    height: 20px;
+    width: 20px;   
+}
+
+.contenedorC{
+    margin-top: 20px;
+    height: 410px;
+    width: 718px;
+    background-color: #CFDAFF;
+    border-radius:20px;
+}
+.linea{
+    margin-top: 8px;
+    background-color: #fff;
+    height: 45px;
+    width: 718;
+}
+
+.circuloA{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-left: 66px;
+    margin-bottom: 20px;
+    height:65px;
+    width: 65px;
+    border-radius: 50%;
+    background-color: #FFCE50;
+}
+
+.restaurante{
+    margin-top: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+
+.blanco{
+    margin-top: 29px;
+    margin-left: 30px;
+    height: 310px;
+    width: 652px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.titulo{ 
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 36px;
+    width: 322px;
+    border-radius: 20px;
+    background-color: #D23838;
+    color: #fff;
+    font-size: 25px;
+    margin-top: 59px;
+}
+
+.botonesP{
+    margin-top: 20px;
+}
+.rojo{
+    margin-top: 15px;
+    height: 40px;
+    width: 507px;
+    border-radius:20px;
+    background-color: #D23838;
+    color: #fff;
+    font-size: 20px;
+    border: 0px;
+}
+
+.rojo:hover{
+    background-color: #AF3131;
+}
